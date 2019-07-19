@@ -27,3 +27,6 @@ You can hit the resulting endpoint in your web browser. Running three weeks of d
 
 Sample URL for two days in July (7/17-7/19):
 https://nycstreets.net/Public/Permit/SearchPermitsCSV/?PermitIssueDateFrom=07%2F17%2F2019&PermitIssueDateTo=07%2F19%2F2019&page=1&rows=100&sidx=PermitIssueDateFrom&sord=desc&LocationSearchType=5
+
+# Output
+Sample output for 7/1/19 to 7/19/19 is uploaded as output_20190701_20190719.csv.
