@@ -57,7 +57,9 @@ There is additional code at the end of the file (for convenience/reference) for 
 * https://data.cityofnewyork.us/City-Government/NYC-Address-Points/g6pj-hd8k
 * https://data.cityofnewyork.us/api/views/cpcq-gbvg/rows.csv?accessType=DOWNLOAD
 
-The default file for reading and writing is attached here (ahvs_data.csv), along with a sample of some output data.
+Due to file size, this must be downloaded and placed in the script directory. File name should be Address_Point.csv.
+
+The default file for reading and writing is attached here (ahv_data.csv), along with a sample of some output data.
 
 # Productionizing
 Steps needed:
