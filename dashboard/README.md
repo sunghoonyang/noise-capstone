@@ -3,7 +3,7 @@ This dashboard surfaces the combination of two data sets:
 * 311 Noise Complaints (https://data.cityofnewyork.us/Social-Services/311-Noise-Complaints/p5f6-bkga)
 * The model outputs from this capstone project, including the predicted enforceability probability
 
-![dashboard screenshot](https://github.com/sgo230/noise-capstone/blob/master/dashboard/dashboard_screenshot.png)
+![dashboard screenshot](https://github.com/sgo230/noise-capstone/blob/master/dashboard/dashboard_screenshot_view.png)
 
 ## Access
 The dashboard is currently uploaded to Tableau Public at https://public.tableau.com/profile/sam.ovenshine#!/vizhome/DEPDashboard/HeatMap.
@@ -16,7 +16,9 @@ There are three versions (not layers) of the map, which are toggleable with the 
 * Heatmap: Density-based clusters of 311 noise complaints
 * Both: Complaint points overlaid on density clusters
 
-Data is filterable by the **Created Date** (at any date level), **Descriptor** (e.g. Noise, Barking Dog, Noise: Alarms), **Enforceability Priority** (predicted enforceability probability on a 0-1 range input), **Open AHV Near Complaint** (binary whether there was an open AHV at the Created Date within 200 meters of the complaint location), and **Days Open** (calendar day difference between the Created Date and the current date).
+Data is filterable by the **Created Date** (at any date level), **Descriptor** (e.g. Noise, Barking Dog, Noise: Alarms), **Enforceability Priority** (predicted enforceability probability on a 0-1 range input), **Open AHV Near Complaint** (binary whether there was an open AHV at the Created Date within 200 meters of the complaint location), **Days Open** (calendar day difference between the Created Date and the current date), **Highest Enforceability** (filter to the most enforceable points).
+
+**Color By** allows a toggle between Enforceability and Open AHV Status to show color of points based on their predicted enforceability or on whether there is an AHV.
 
 The maps can be navigated by clicking and dragging. Zooming in and out is accomplished with two-finger touch or scroll.
 
@@ -33,5 +35,5 @@ The dashboard was built with Tableau Desktop 2019.2 and uploaded to Tableau Publ
 Productionization would require the following:
 * A server/service on which to run the model script at a given time schedule and output the CSV files from the model
 * Tableau Server to refresh the file extract
-* Tableau Server to display the dashboard for optimal user experience and performance
+* Tableau Server to display the dashboard for optimal user experience and **performance**
 * Access to real-time 311 data to show data not on a lag
