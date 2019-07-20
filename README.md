@@ -16,10 +16,10 @@ Documentation & Resources are open to all NYU community.
 * [Homepage](https://zem232.github.io/NoiseCapstone/)
 * [Google Drive](https://drive.google.com/drive/u/1/folders/1hE8ACy-bLxxMTJOs6yDrhvv0HL-LEQNd)
 
-## Notable Tools
+## Tools & Deliverables
 * After Hour Variance scraper that collects DOB's [After Hour Variance Permits](https://www1.nyc.gov/site/buildings/business/after-hours-variances.page) data published in [DOB website](http://a810-bisweb.nyc.gov/bisweb/bispi00.jsp).
 * Department of Transportation (DOT) permits scraper (please check [README.md](https://github.com/sunghoonyang/noise-capstone/tree/master/dot_scraper) for more info)
-* [Tableau View for dashboarding](https://github.com/sunghoonyang/noise-capstone/tree/master/dashboard)
 * Neural Network for Spatiotemporal Forecasting of Noise Complaint Volume
   * [PyTorch Train & Test Suites](https://github.com/sunghoonyang/noise-capstone/blob/master/analysis/311/nn/vanilla_lstm_model-NTA-MN_ONLY_MSE.ipynb)
   * [Data Wrangling for Neural Network](https://github.com/sunghoonyang/noise-capstone/blob/master/analysis/311/nn/vanilla_lstm_model-NTA-MN_ONLY_data_wrangling.ipynb)
+* [Tableau View for dashboarding](https://github.com/sunghoonyang/noise-capstone/tree/master/dashboard)
