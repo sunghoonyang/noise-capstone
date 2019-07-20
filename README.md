@@ -12,7 +12,7 @@ Team consists of five CUSP graduate students:
 
 ## Notable Documents
 * The scraper that collects DOB's [After Hour Variance](https://www1.nyc.gov/site/buildings/business/after-hours-variances.page) data published in [DOB website](http://a810-bisweb.nyc.gov/bisweb/bispi00.jsp).
-* [Tableau View for dashboarding](https://public.tableau.com/profile/sam.ovenshine#!/vizhome/DEPDashboard/HeatMap)
+* [Tableau View for dashboarding](https://github.com/sunghoonyang/noise-capstone/tree/master/dashboard)
 * Neural Network for Spatiotemporal Forecasting of Noise Complaint Volume
   * [PyTorch Train & Test Suites](https://github.com/sunghoonyang/noise-capstone/blob/master/analysis/311/nn/vanilla_lstm_model-NTA-MN_ONLY_MSE.ipynb)
   * [Data Wrangling for Neural Network](https://github.com/sunghoonyang/noise-capstone/blob/master/analysis/311/nn/vanilla_lstm_model-NTA-MN_ONLY_data_wrangling.ipynb)
