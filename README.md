@@ -18,7 +18,7 @@ Documentation & Resources are open to all NYU community.
 
 ## Notable Products
 * After Hour Variance scraper that collects DOB's [After Hour Variance Permits](https://www1.nyc.gov/site/buildings/business/after-hours-variances.page) data published in [DOB website](http://a810-bisweb.nyc.gov/bisweb/bispi00.jsp).
-* [DOT scraper (please check README.md)](https://github.com/sunghoonyang/noise-capstone/tree/master/dot_scraper)
+* Department of Transportation (DOT) permits scraper (please check [README.md](https://github.com/sunghoonyang/noise-capstone/tree/master/dot_scraper) for more info)
 * [Tableau View for dashboarding](https://github.com/sunghoonyang/noise-capstone/tree/master/dashboard)
 * Neural Network for Spatiotemporal Forecasting of Noise Complaint Volume
   * [PyTorch Train & Test Suites](https://github.com/sunghoonyang/noise-capstone/blob/master/analysis/311/nn/vanilla_lstm_model-NTA-MN_ONLY_MSE.ipynb)
