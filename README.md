@@ -19,8 +19,7 @@ Documentation & Resources are open to all NYU community.
     * [Counts of Noise Complaints: Data aggregated with respect to Neighborhood Tabulation Area](https://drive.google.com/drive/u/1/folders/1V9VlLeKNtd5Dnlim_X-Ri0s4N13TPgMs)
     * [National Oceanic and Atmospheric Administration: Weather Data](https://drive.google.com/drive/u/1/folders/1x-fc6ATYnlPxj6ZtLr4FNqhBpCroFXVB)
     * [Census data aggregated with Pluto demarcation](https://drive.google.com/drive/u/1/folders/1rPLzdxa2Wqiifimd5vxwRaqhbZadpPCS)
-    * [Zoning District]
-    (https://drive.google.com/drive/u/1/folders/187LS_mM0_mMaFlYZaO-0-AHNMOgybnWd)
+    * [Zoning District](https://drive.google.com/drive/u/1/folders/187LS_mM0_mMaFlYZaO-0-AHNMOgybnWd)
     * [After Hour Variance Data](https://drive.google.com/drive/u/1/folders/15MM0D5h5BRfnbwTcVhP7jVNy2Tbpr1Oc)
 
 ## Tools & Deliverables
