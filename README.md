@@ -13,14 +13,14 @@ Team consists of five CUSP graduate students:
 ## Documentation & Resources 
 Documentation & Resources are open to all NYU community.
 * [Report](https://docs.google.com/document/d/1uN8fs5w_1YlJJBLZ3DBpJ3Uq2PPScutX_RQZJz5hgXA/edit?usp=sharing)
-* [Homepage](https://zem232.github.io/NoiseCapstone/)
+* [Website](https://zem232.github.io/NoiseCapstone/)
 * [Google Drive](https://drive.google.com/drive/u/1/folders/1hE8ACy-bLxxMTJOs6yDrhvv0HL-LEQNd)
   * [Data Repository](https://drive.google.com/drive/u/1/folders/15MM0D5h5BRfnbwTcVhP7jVNy2Tbpr1Oc)
     * [Counts of Noise Complaints: Data aggregated with respect to Neighborhood Tabulation Area](https://drive.google.com/drive/u/1/folders/1V9VlLeKNtd5Dnlim_X-Ri0s4N13TPgMs)
     * [National Oceanic and Atmospheric Administration: Weather Data](https://drive.google.com/drive/u/1/folders/1x-fc6ATYnlPxj6ZtLr4FNqhBpCroFXVB)
     * [Census data aggregated with Pluto demarcation](https://drive.google.com/drive/u/1/folders/1rPLzdxa2Wqiifimd5vxwRaqhbZadpPCS)
     * [Zoning District](https://drive.google.com/drive/u/1/folders/187LS_mM0_mMaFlYZaO-0-AHNMOgybnWd)
-    * [After Hour Variance Data](https://drive.google.com/drive/u/1/folders/15MM0D5h5BRfnbwTcVhP7jVNy2Tbpr1Oc)
+    * [After Hour Variance Data](https://drive.google.com/open?id=1Qek6XScZBaWsnpAoJOMVvmD8-EKMi82i)
 
 ## Tools & Deliverables
 * After Hour Variance scraper that collects DOB's [After Hour Variance Permits](https://www1.nyc.gov/site/buildings/business/after-hours-variances.page) data published in [DOB website](http://a810-bisweb.nyc.gov/bisweb/bispi00.jsp).
