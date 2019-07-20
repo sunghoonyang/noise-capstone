@@ -1,8 +1,8 @@
 # Rapid Response for DEP Noise Complaints
 *Abstract is extracted from the report:*
 >In New York City, the Department of Environmental Protection (DEP) handles outdoor noise complaints from sources ranging from construction activity to the jingle of ice cream trucks. In recent years, the growing volume of noise complaints has increased the agency’s response times and hindered enforcement of the city’s noise code. This capstone project aims to provide a data-driven approach to optimize the DEP’s processes to better address noise complaints. To accomplish this, we will cluster noise complaints spatially and temporally. We will then deploy a random forest classifier to assign a priority to each cluster based on enforceability, previous complaint resolutions, and sponsor parameters. Based on our discussion with domain experts and preliminary analysis, we anticipate that our clustering model will more accurately identify enforceable and high-priority complaint clusters than models that assign priority to complaints based on other factors. The intended implications of this work are to shorten complaint time to resolution, reduce the complaint backlog, and increase the issuance of violations.
-CUSP Class of 2019 Urban Noise Capstone. 
 
+## Team 
 Team consists of five CUSP graduate students: 
 * [Qinyu Goh](https://github.com/qygoh) (qg412@nyu.edu)
 * [Zoe Martiniak](https://github.com/zem232) (zem232@nyu.edu)
