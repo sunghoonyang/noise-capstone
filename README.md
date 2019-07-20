@@ -15,7 +15,7 @@ Documentation & Resources are open to all NYU community.
 * [Report](https://docs.google.com/document/d/1uN8fs5w_1YlJJBLZ3DBpJ3Uq2PPScutX_RQZJz5hgXA/edit?usp=sharing)
 * [Homepage](https://zem232.github.io/NoiseCapstone/)
 * [Google Drive](https://drive.google.com/drive/u/1/folders/1hE8ACy-bLxxMTJOs6yDrhvv0HL-LEQNd)
- * [Data Repository](https://drive.google.com/drive/u/1/folders/15MM0D5h5BRfnbwTcVhP7jVNy2Tbpr1Oc)
+  * [Data Repository](https://drive.google.com/drive/u/1/folders/15MM0D5h5BRfnbwTcVhP7jVNy2Tbpr1Oc)
 
 ## Tools & Deliverables
 * After Hour Variance scraper that collects DOB's [After Hour Variance Permits](https://www1.nyc.gov/site/buildings/business/after-hours-variances.page) data published in [DOB website](http://a810-bisweb.nyc.gov/bisweb/bispi00.jsp).
