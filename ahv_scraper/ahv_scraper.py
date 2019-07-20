@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[132]:
+# In[1]:
 
 
 import requests
@@ -13,15 +13,17 @@ import pandas as pd
 import json
 
 
-# In[319]:
+# In[17]:
 
 
-def main(start_ahv_id='00895134', 
+def main(start_ahv_id='00896479', 
          not_found_retries=5, 
-         max_times_blocked=0, 
-         sleep_seconds=1,
+         max_times_blocked=0,
+         max_times_hard_blocked=5,
+         sleep_seconds=0.1,
          spoof_chrome=True,
-         csv_filename='AHV Data.csv',
+         show_print_log=True,
+         csv_filename='ahv_data.csv',
          csv_write_mode='append',
          delete_terminal_not_found_rows_and_infer_start=True):
     """
@@ -29,11 +31,13 @@ def main(start_ahv_id='00895134',
     
     Arguments:
         start_ahv_id: The AHV ID from which to begin scraping (with or without two leading zeros)
-        not_found_retries: Threshold for when to stop the scraping based on total AHV ID not found results
-        max_times_blocked: Threshold for then to stop the scraping based on blocks (0=no limit)
+        not_found_retries: Threshold for when to stop the scraping based on consecutive not found results
+        max_times_blocked: Threshold for when to stop the scraping based on blocks (0=no limit)
+        max_times_hard_blocked: Threshold for when to stop the scraping based on hard blocks (0=no limit)
         sleep_seconds: Seconds to sleep between requests
         spoof_chrome: Use a user agent and request headers from Google Chrome (may reduce blocks?)
-        csv_file_name: CSV file to read and write to
+        show_print_log: Print each AHV and its status during run
+        csv_filename: CSV file to read and write to
         csv_write_mode: 'overwrite' to recreate the file; append to add the latest AHV rows
         delete_terminal_not_found_rows_and_infer_start: If true, the function will delete the last rows
             with a not found status and resume scraping from the latest valid AHV found
@@ -45,13 +49,14 @@ def main(start_ahv_id='00895134',
     if csv_write_mode == 'append' and delete_terminal_not_found_rows_and_infer_start:
         df = pd.read_csv(csv_filename, index_col=0)
         highest_ahv_id = df[df['status']!='AHV does not exist'].index.max()
-        df[df.index<=highest_ahv_id].to_csv('ahvs_sam.csv')  
+        df[df.index<=highest_ahv_id].to_csv(csv_filename)  
         start_ahv_id = int(highest_ahv_id) + 1
 
     current_ahv_id = int(start_ahv_id)
     url = 'http://a810-bisweb.nyc.gov/bisweb/AHVPermitDetailsServlet'
     blocked_counter = 0
     not_found_counter = 0
+    hard_blocked_counter = 0
 
     headers = {
         'Accept': "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3"
@@ -67,6 +72,8 @@ def main(start_ahv_id='00895134',
             }
 
     blocked_counter_limit = 999999 if max_times_blocked == 0 else max_times_blocked
+    
+    hard_blocked_counter_limit = 999999 if max_times_hard_blocked == 0 else max_times_hard_blocked
 
     file_mode = 'w' if csv_write_mode == 'overwrite' else 'a'
 
@@ -88,25 +95,29 @@ def main(start_ahv_id='00895134',
                             'work_description'
                             ])
 
-        while not_found_counter < not_found_retries and blocked_counter < blocked_counter_limit:
+        while not_found_counter < not_found_retries             and blocked_counter < blocked_counter_limit             and hard_blocked_counter < hard_blocked_counter_limit:
 
             # Set up call and parse HTML
             current_ahv_str = '00' + str(current_ahv_id)
-            print("AHV ID:", current_ahv_str)
+            
+            if show_print_log:
+                print("AHV ID:", current_ahv_str)
 
             response = requests.request("GET", url, headers=headers, params={"allkey":current_ahv_str})
             soup = BeautifulSoup(response.text, 'html.parser')
 
             # Server/client error
             if response.status_code >= 400:
-                print("Server/client error")
-                break
-
+                hard_blocked_counter += 1
+                if show_print_log:
+                    print("Error status code:", response.status_code)
+                    
             # Request blocked due to high demand
             if soup.title.string == 'Visitor Prioritization - NYC Department of Buildings':
-                time.sleep(sleep_seconds)
                 blocked_counter += 1
-                print("Blocked")
+                
+                if show_print_log:
+                    print("Blocked")
 
             # ID does not have an AHV
             elif soup.find('td', {'class':'errormsg'}):
@@ -124,7 +135,8 @@ def main(start_ahv_id='00895134',
                      ''
                     ])
 
-                print("Not found")
+                if show_print_log:
+                    print("Not found")
                 not_found_counter += 1
                 current_ahv_id += 1
 
@@ -133,7 +145,7 @@ def main(start_ahv_id='00895134',
 
                 ahv_id = current_ahv_str
                 timestamp_utc = datetime.datetime.utcnow().isoformat()
-                building_identification_number = soup.findAll('td', {"class": "maininfo", "align": "right"})[0].a.string
+                building_identification_number = soup.findAll('td', {"class": "maininfo", "colspan": "3"})[-1].a.string
                 status = soup.findAll('td', {"class": "content", "colspan":"4"})[0].string
 
                 bools = ['_check' in str(i) for i in soup.findAll('img',{'height':10})[::2]]
@@ -160,32 +172,39 @@ def main(start_ahv_id='00895134',
                      work_description,
                     ])
 
-                ahv = current_ahv
-                timestamp_utc = datetime.datetime.utcnow().isoformat()
-                bin_id = soup.findAll('td', {"class": "maininfo", "align": "right"})[0].a.string
-                status = soup.findAll('td', {"class": "content", "colspan":"4"})[0].string
-                ahv_days = []
-                for i in soup.findAll('td', {"class": "centercontent"})[5:][::4]:
-                    ahv_days.append(i.string)
-                #output.append([ahv, timestamp_utc, bin_id, status, ahv_days])
-
-                print("Scraped")
+                if show_print_log:
+                    print("Scraped")
                 current_ahv_id += 1
+                not_found_counter = 0
                 
             time.sleep(sleep_seconds)
 
 
-# In[321]:
+# In[18]:
 
 
 if __name__ == '__main__':
-   main(start_ahv_id='00895130',
+   main(start_ahv_id='00896479',
         not_found_retries=5, 
         max_times_blocked=0, 
-        sleep_seconds=1,
+        max_times_hard_blocked=5,
+        sleep_seconds=0.1,
         spoof_chrome=True,
-        csv_filename='AHV Data.csv',
+        show_print_log=True,
+        csv_filename='ahv_data.csv',
         csv_write_mode='append',
         delete_terminal_not_found_rows_and_infer_start=True
        )
+
+
+# In[10]:
+
+
+# For convenience, add address and latitude/longitude for each AHV based on BIN
+df_address = pd.read_csv('Address_Point.csv')
+df_ahv = pd.read_csv('ahv_data.csv')
+df = df_ahv.merge(df_address[['the_geom','BIN','H_NO','FULL_STREE','ZIPCODE']], how='left', left_on = 'building_identification_number', right_on='BIN')
+df.drop(['BIN'], axis=1, inplace=True)
+df.rename(columns={"H_NO": "house_number", "FULL_STREE": "street_name", "ZIPCODE":"zip_code"}, inplace=True)
+df.to_csv('ahv_data.csv', index=False)
 
