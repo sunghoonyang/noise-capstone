@@ -3,7 +3,7 @@ This dashboard surfaces the combination of two data sets:
 * 311 Noise Complaints (https://data.cityofnewyork.us/Social-Services/311-Noise-Complaints/p5f6-bkga)
 * The model outputs from this capstone project, including the predicted enforceability probability
 
-![dashboard screenshot](https://github.com/sgo230/noise-capstone/blob/master/dashboard/dashboard_screenshot.png)
+![dashboard screenshot](https://github.com/sgo230/noise-capstone/blob/master/dashboard/dashboard_screenshot_view.png)
 
 ## Access
 The dashboard is currently uploaded to Tableau Public at https://public.tableau.com/profile/sam.ovenshine#!/vizhome/DEPDashboard/HeatMap.
