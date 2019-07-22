@@ -25,6 +25,7 @@ Documentation & Resources are open to all NYU community.
 ## Tools & Deliverables
 * After Hour Variance scraper that collects DOB's [After Hour Variance Permits](https://www1.nyc.gov/site/buildings/business/after-hours-variances.page) data published in [DOB website](http://a810-bisweb.nyc.gov/bisweb/bispi00.jsp).
 * Department of Transportation (DOT) permits scraper (please check [README.md](https://github.com/sunghoonyang/noise-capstone/tree/master/dot_scraper) for more info)
+* [DEP Noise Scheduling](https://github.com/sds695/DEP_noise_scheduling) aims at creating using features based on the location and times of the noise complaints to be able to guess whether new complaints will be enforcable or not.
 * Neural Network for Spatiotemporal Forecasting of Noise Complaint Volume
   * [PyTorch Train & Test Suites](https://github.com/sunghoonyang/noise-capstone/blob/master/analysis/311/nn/vanilla_lstm_model-NTA-MN_ONLY_MSE.ipynb)
   * [Data Wrangling for Neural Network](https://github.com/sunghoonyang/noise-capstone/blob/master/analysis/311/nn/vanilla_lstm_model-NTA-MN_ONLY_data_wrangling.ipynb)
