@@ -3,7 +3,7 @@ This dashboard surfaces the combination of two data sets:
 * 311 Noise Complaints (https://data.cityofnewyork.us/Social-Services/311-Noise-Complaints/p5f6-bkga)
 * The model outputs from this capstone project, including the predicted enforceability probability
 
-![dashboard screenshot](https://github.com/sgo230/noise-capstone/blob/master/dashboard/dashboard_screenshot_view.png)
+![dashboard screenshot](https://github.com/sgo230/noise-capstone/blob/master/dashboard/dashboard_screenshot.png)
 
 ## Access
 The dashboard is currently uploaded to Tableau Public at https://public.tableau.com/profile/sam.ovenshine#!/vizhome/DEPDashboard/HeatMap.
@@ -16,7 +16,7 @@ There are three versions (not layers) of the map, which are toggleable with the 
 * Heatmap: Density-based clusters of 311 noise complaints
 * Both: Complaint points overlaid on density clusters
 
-Data is filterable by the **Created Date** (at any date level), **Descriptor** (e.g. Noise, Barking Dog, Noise: Alarms), **Enforceability Priority** (predicted enforceability probability on a 0-1 range input), **Open AHV Near Complaint** (binary whether there was an open AHV at the Created Date within 200 meters of the complaint location), **Days Open** (calendar day difference between the Created Date and the current date), **Highest Enforceability** (filter to the most enforceable points).
+Data is filterable by **Created Date** (at any date level), **Descriptor** (e.g. Noise, Barking Dog, Noise: Alarms), **Enforceability Priority** (predicted enforceability probability on a 0-1 range input), **Open AHV Near Complaint** (binary whether there was an open AHV at the Created Date within 200 meters of the complaint location), **Days Open** (calendar day difference between the Created Date and the current date), **Highest Enforceability** (filter to the most enforceable points), and **Nearby Related Complaint** (binary for construction complaints whether there is another construction complaint within 300 meters).
 
 **Color By** allows a toggle between Enforceability and Open AHV Status to show color of points based on their predicted enforceability or on whether there is an AHV.
 
