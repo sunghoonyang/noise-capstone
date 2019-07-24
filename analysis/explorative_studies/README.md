@@ -18,4 +18,7 @@ Contains ipython notebooks that was created in the earlier exploratory phase of 
     
 * **e_designation_exploratory.ipynb**
     * Exploring the spatial distribution of e-designations for pre-identified noise and non-noise areas in New York City
+    
+* **311_census_time_correlation.ipynb**
+    * Examining if there were biases in how long it took for complaints to be addressed based on income or race of the population in the area.
    
