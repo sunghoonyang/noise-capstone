@@ -74,4 +74,4 @@ class ManhattanModel(nn.Module):
             return x, h1, h2
 ```
 The result was presented in Precision @ 15 metric, where the correctly predicted membership of top 15 neighborhoods out of 29 candidates is counted as score out of 15. The result of Precision @ 15 is visualized in bottom graph, when tested with 2 years worth of held-out data.
-![res](https://github.com/sunghoonyang/noise-capstone/blob/master/analysis/311/nn/LSTM_Autoencoder_Result.png)
+![res](./LSTM_Autoencoder_Result.png)
