@@ -18,6 +18,7 @@ Team consists of five CUSP graduate students:
 Documentation & Resources are open to all NYU community.
 * [Report](https://github.com/sunghoonyang/noise-capstone/tree/reorganize/report)
 * [Website](https://zem232.github.io/NoiseCapstone/)
+* [Exploratory Studies](https://github.com/sunghoonyang/noise-capstone/tree/reorganize/analysis/explorative_studies): Folder containing all exploratory analysis on 311 data and chosen datasets
 * [Google Drive](https://drive.google.com/drive/u/1/folders/1hE8ACy-bLxxMTJOs6yDrhvv0HL-LEQNd)
   * [Data Repository](https://drive.google.com/drive/u/1/folders/15MM0D5h5BRfnbwTcVhP7jVNy2Tbpr1Oc)
     * [Counts of Noise Complaints: Data aggregated with respect to Neighborhood Tabulation Area](https://drive.google.com/drive/u/1/folders/1V9VlLeKNtd5Dnlim_X-Ri0s4N13TPgMs)
