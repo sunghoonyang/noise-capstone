@@ -1,0 +1,3 @@
+[submodule "DEP_noise_scheduling"]
+	path = DEP_noise_scheduling
+	url = https://github.com/sds695/DEP_noise_scheduling
